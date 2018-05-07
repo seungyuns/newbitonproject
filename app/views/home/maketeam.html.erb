@@ -1,0 +1,82 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img class="logo" src="/logo.png" alt="라이언던전"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" style="display:flex; justify-content: flex-end;font-size : 14pt; font-weight: bold;">
+      <li class="nav-item active" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/mainview"> Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/index2"> Room Escape </a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/maketeam"> 팀 구성 </a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/board2"> 질문 게시판 </a>
+      </li>
+      <div style="position:absolute; right: 25px;">
+        <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<% else %>
+<%= User.all.inspect %>
+    
+    <%User.all.each do |a|%>
+      <p><%= image_tag "#{a.proimg}" %></p>
+    <%end%>
+    <%= link_to('Login', new_user_session_path) %>
+<% end %> 
+  </div>
+
+
+      
+    </ul>
+  </div>
+</nav>
+    
+    <header class="masthead text-center text-white d-flex">
+      <div class="col-lg-10 mx-auto">
+        <div class="team" style="border-radius:25pt; background:linear-gradient(rgba(225, 225, 225, 0.3), rgba(245, 245, 245, 0.35));
+                                  width:400px; height:350px; text-align:center; margin: 0 auto; padding-top: 30px;">
+          <form style="font-size: 25pt; font-size"method="post" action="/home/value_save">
+            <span><input type="radio" name="isfront" value='true' checked> Front </input></span>
+            <span><input type="radio" name="isfront" value='false'> Back <br></input></span>
+            <input class="btn btn-primary js-scroll-trigger" style="width:150px;height:55px;font-size:18pt;"type="submit" value="팀 뽑기"></input>
+          </form>
+          <div style="text-align: center;">
+            
+             
+             
+             
+          </div>
+          <% unless @bool.nil? %>
+            <% @back.each_with_index do |b,i| %>
+               백엔드 <%= i+1%> : <%= b.email %>
+               <hr>
+              <% end %>
+              <% @front.each_with_index do |b,i| %>
+                프론트 <%= i+1%> : <%= b.email %>
+               <hr>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    
+    
+    <!--<h1 style="color:white;"><%= current_user.isfront %></h1>-->
+    <!--<h1 style="color:white;"><%= current_user.email %></h1  -->
+    </header>
+   
+   
+   
+        <div class="footer_side">
+        <span class="footer_left" style="position:absolute; bottom:-280px;padding-top: 60px;margin-left:15px; color:white; font-size:14pt;">
+            © 2018 LikeLion - Creative and Challenging Students
+        </span>
+        <div class="footer_right" style="float:right;">
+          <img class="flogo" src="/footer.png" alt="멋쟁이사자처럼">
+        </div>
+      </div>

@@ -1,0 +1,37 @@
+<!-- 메인화면 -->
+
+<head>
+      <h1 class="whitemiddle">Quiz 2</h1>
+      
+      <div class="whitemiddle" style="text-align: center">
+      <% @name.each_with_index do |name , index| %>
+      이름 : <%= name %> <br>
+      <img src="<%= @image[index].first %>" style="width: 250px"></img><br>
+      설명 : <%= @description[index] %><hr>
+<% end %></div>
+      
+</head>
+
+
+<body class="mainbackground">
+<h2 class="whitemiddle">　</h2>
+<h2 class="whitemiddle">위의 화면은 다른 웹사이트의 문서를 수집한 것이다.</h2>
+<h2 class="whitemiddle">정보를 긁어온다고도 하는 이 코드는 무엇인가.</h2>
+</div>
+
+<!-- 하단 메뉴 -->
+<div style="float: left">
+<a onclick="window.open('http://www.thelabyrinth.co.kr/labyrinth/html/tool_memo.jsp', '메모장','width=750, height=400'); return false"><input class="black" type="button" value="메모장" style="margin-left:25px"></a>
+<a onclick="window.open('http://go.gagalive.kr/d/~~~new_likelion', '채팅방','width=500, height=400'); return false"><input class="black" type="button" value="채팅방" style="margin-left:5px"></a>
+<a onclick="window.open('http://wantknow.tistory.com/'); return false"><input class="black" type="button" value="WantKnow" style="margin-left:5px"></a>
+</div>
+
+<div style="float: right";>
+<form action="/home/quiz3" method="get">
+  <input type="text" name="answer">
+  <input type="submit" value="정답">
+</form>
+
+</div>
+
+</body>

@@ -1,0 +1,73 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img class="logo" src="/logo.png" alt="라이언던전"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" style="display:flex; justify-content: flex-end;font-size : 14pt; font-weight: bold;">
+      <li class="nav-item active" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/mainview"> Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/index2"> Room Escape </a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/maketeam"> 팀 구성 </a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/board2"> 질문 게시판 </a>
+      </li>
+      <div style="position:absolute; right: 25px;">
+        <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<% else %>
+<%= User.all.inspect %>
+    
+    <%User.all.each do |a|%>
+      <p><%= image_tag "#{a.proimg}" %></p>
+    <%end%>
+    <%= link_to('Login', new_user_session_path) %>
+<% end %> 
+  </div>
+
+
+      
+    </ul>
+  </div>
+</nav>
+      <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong> <br>
+               <br>
+              LION ROOM ESCAPE </strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5" style="background:linear-gradient(rgba(5, 5, 5, 0.7), rgba(45, 45, 45, 0.75));
+                                              border-radius:25pt;font-size:14pt; line-height:2.5;">
+              
+              지금 멋사에서는 '이두희' 대표님이 <br>
+              뉴비들을 잡아먹는다는 기괴한 소문이 돌고 있다.<br> 
+              코딩을 제대로 해내지 못하는 뉴비들을 공격하는 포악한 대표님!<br>
+              정신을 잃었고, 깨어보니 그의 실험실에 갇혀버렸다.<br>
+              다른 뉴비들을 잡으러 떠난 대표님이 돌아오기 전까지 <br>
+              탈출하지 못한다면 다음 희생양은 내가 되고 말겠지.<br>
+               </p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="/home/index2">문제 풀러 가기</a>
+          </div>
+        </div>
+      </div>
+    </header>
+      <div class="footer_side">
+        <span class="footer_left" style="position:absolute; bottom:-280px;padding-top: 60px;margin-left:15px; color:white; font-size:14pt;">
+            © 2018 LikeLion - Creative and Challenging Students
+        </span>
+        <div class="footer_right" style="float:right;">
+          <img class="flogo" src="/footer.png" alt="멋쟁이사자처럼">
+        </div>
+      </div>

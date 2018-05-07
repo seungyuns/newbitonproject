@@ -1,0 +1,120 @@
+
+.mainbackground {
+    background-image: url(/mainlion.jpg) ;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo{
+  width : 75px;
+  height : 40px;
+}
+.flogo{
+  width : 68px;
+  height : 75px;
+}
+
+.maingrid {
+    
+}
+
+.black {
+    color: black;
+}
+
+.white {
+    color: white;
+}
+
+.whitemiddle {
+    color: white;
+    text-align: center;
+}
+
+.html {
+    width: 90%;
+}
+
+header.masthead {
+  height : 900px;
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: linear-gradient(rgba(30, 30, 30, 0.8), rgba(235, 235, 235, 0.4)),
+        url("background.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-background-repeat: no-repeat;  
+  -moz-background-repeat: no-repeat;  
+  -o-background-repeat: no-repeat;  
+  background-repeat: no-repeat;  
+}
+
+
+header.masthead2 {
+  height : 900px;
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: linear-gradient(rgba(15, 15, 15, 0.9), rgba(235, 235, 235, 0.3)),
+        url("back2.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-background-repeat: no-repeat;  
+  -moz-background-repeat: no-repeat;  
+  -o-background-repeat: no-repeat;  
+  background-repeat: no-repeat;  
+}
+
+.middle_side{
+  height : 300px;
+  background-color : darkgray ;
+  background-position: center center;
+}
+
+.middle_text{
+  position : relative;
+  color : white;
+  font-size: 65px;
+  text-align : center;
+  /*vertical-align: middle;*/
+  padding-top:95px;
+}
+
+
+.footer_side{
+  height : 80px;
+  background :linear-gradient(rgba(35, 35, 35, 0.65), rgba(5, 5, 5, 0.8));
+  background-position: center center;
+}
+
+.footer_text{
+  position : relative;
+  color : white;
+  font-size: 65px;
+  text-align : center;
+  /*vertical-align: middle;*/
+  
+}
+
+.navbar-form{
+  padding-left:130px;
+    
+}
+.checkbox{
+    color : white;
+}
+
+
+
+/*.field{*/
+/*    text-align : center;*/
+/*}*/
+/*.actions{*/
+/*    text-align : center;*/
+/*}*/

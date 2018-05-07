@@ -1,0 +1,40 @@
+<!-- 메인화면 -->
+
+<head>
+      <p> 
+        <a href=".html"><img style="margin-left: 100px;" src="/newbie.jpg" width="600"></a>
+      </p>
+</head>
+
+<!-- 메뉴 -->
+<body class="mainbackground">
+    <h1 style="margin-left: 200px; color: white;">"Hello? Newbie!"</h1>
+    <p style="margin-left: 200px;">
+        <a href="/home/index2.html" style="color: white;">메인화면</a><br>
+        <a href="/home/method.html" style="color: white;">진행방법</a><br>
+    </p>
+    
+<!-- 하단 화면-->
+
+
+<div style="text-align: center">
+<p style="margin-bottom: 30px; color: white;">페이지에서 주어지는 문제의 정답을 찾아</p>
+<p style="margin-bottom: 30px; color: white;">정답란에 입력하여 다음 페이지로 넘어갈 수 있습니다.</p>
+<p style="margin-bottom: 30px; color: white;">모든 답안은 영어로 작성하셔야 합니다.</p>
+<p style="margin-bottom: 30px; color: white;">당신은 이미 답을 알고 있습니다!</p>
+</div>
+			
+<div style="float: left">
+<a onclick="window.open('http://www.thelabyrinth.co.kr/labyrinth/html/tool_memo.jsp', '메모장','width=750, height=400'); return false"><input class="black" type="button" value="메모장" style="margin-left:25px"></a>
+<a onclick="window.open('http://go.gagalive.kr/d/~~~new_likelion', '채팅방','width=500, height=400'); return false"><input class="black" type="button" value="채팅방" style="margin-left:5px"></a>
+<a href=""><input class="black" type="button" value="WantKnow" style="margin-left:5px"></a>
+</div>
+			
+<div style="float: right";>
+<span style="color: white;">Who are you?</span>
+<form action="/home/quiz1" method="get">
+  <input type="text" name="answer">
+  <input type="submit" value="정답">
+</form>
+
+</body>

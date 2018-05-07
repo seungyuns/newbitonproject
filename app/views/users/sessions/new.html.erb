@@ -1,0 +1,90 @@
+<!-- 메인화면 -->
+<head>
+  <style type='text/css'>
+@import url("users.css");
+</style>
+<link rel="stylesheet" href="users.css">
+<!--<link rel="stylesheet" href="/app/assets/stylesheets/users.css">-->
+<!--</head>-->
+      <p> 
+        <img style="margin-left: 100px;" src="/newbie.jpg" width="600">
+      </p>
+</head>
+
+<!-- 메뉴 -->
+
+<body class="mainbackground">
+    <h1 style="margin-left: 200px; color: white;">Newbie Room Escape</h1>
+    <p style="margin-left: 200px;">
+      
+      
+      <% if user_signed_in? %>
+    <%= User.where(email: current_user.email).inspect %>
+    <p><%= image_tag "#{current_user.proimg}" %></p>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<% else %>
+    <%= User.all.inspect %>
+    <%User.all.each do |a|%>
+      <p><%= image_tag "#{a.proimg}" %></p>
+    <%end%>
+    <%= link_to('Login', new_user_session_path) %>
+<% end %>
+        <!--<a href="/" style="color: white;">메인화면</a><br>-->
+        <!--<a href="/home/method.html" style="color: white;">진행방법</a><br>-->
+        <!--<a href="/home/function.html" style="color: white;">추가기능</a><br>-->
+        <!--<a href="/home/board.html" style="color: white;">방명록</a><br>-->
+    </p>
+    
+<!-- 하단 화면-->
+
+
+<div style="text-align: center">
+<p style="margin-bottom: 30px; color: white;">LikeLion</p>
+<p style="margin-bottom: 30px; color: white;">Newbie Room Escape</p>
+<p style="margin-bottom: 30px; color: white;">　</p>
+</div>
+			
+<div style="float: left">
+<a onclick="window.open('http://www.thelabyrinth.co.kr/labyrinth/html/tool_memo.jsp', '메모장','width=750, height=400'); return false"><input class="black" type="button" value="메모장" style="margin-left:25px"></a>
+<a onclick="window.open('http://go.gagalive.kr/d/~~~new_likelion', '채팅방','width=500, height=400'); return false"><input class="black" type="button" value="채팅방" style="margin-left:5px"></a>
+<a onclick="window.open('http://wantknow.tistory.com/'); return false"><input class="black" type="button" value="WantKnow" style="margin-left:5px"></a>
+</div>
+
+<div style="float: right";>
+
+
+<form action="/home/quiz1" method="get">
+  <input type="text" name="answer">
+  <input type="submit" value="정답">
+</form>
+
+</div>
+
+</body>
+
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

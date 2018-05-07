@@ -1,0 +1,50 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img class="logo" src="/logo.png" alt="라이언던전"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" style="display:flex; justify-content: flex-end;font-size : 14pt; font-weight: bold;">
+      <li class="nav-item active" style="margin-left : 15px;">
+        <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/index2"> Room Escape </a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/maketeam"> 팀 구성 </a>
+      </li>
+      <li class="nav-item" style="margin-left : 15px;">
+        <a class="nav-link" href="/home/board2"> 질문 게시판 </a>
+      </li>
+      <div style="position:absolute; right: 25px;">
+        <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<% else %>
+<%= User.all.inspect %>
+    
+    <%User.all.each do |a|%>
+      <p><%= image_tag "#{a.proimg}" %></p>
+    <%end%>
+    <%= link_to('Login', new_user_session_path) %>
+<% end %> 
+  </div>
+
+
+      
+    </ul>
+  </div>
+</nav>
+      <header class="masthead">
+        <span style="position:relative; left: 10%; background-color : gray; border-radius:5.5pt;font-size: 36pt; font-weight: bold; color: white;">에러코드 공유 게시판</span>
+        <div class="text-center">
+        <form action='/home/create' method='post' enctype="multipart/form-data">
+                   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <input type='text' name='post_title' style="width:80%; font-size: 16pt; height: 30pt; " placeholder='제목을 쓰세요.'><br><br>
+              <input type="file" name="image" accept="image/*" value='이미지'><br>
+              <textarea name="post_content" style="width:80%;height:500px;border:1;overflow:visible;text-overflow:ellipsis;" placeholder='내용'></textarea><br>
+              <input class="btn btn-secondary" type='submit' value='게시'><a href='/'><input class="btn btn-secondary" type='submit' value='뒤로가기'></a><br>
+        </form>
+        </div>
+    </header>

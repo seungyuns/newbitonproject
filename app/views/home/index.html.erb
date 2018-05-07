@@ -1,0 +1,67 @@
+<!-- 메인화면 -->
+
+<head>
+      <p> 
+        <img style="margin-left: 100px;" src="/newbie.jpg" width="600">
+      </p>
+</head>
+
+<!-- 메뉴 -->
+
+<body class="mainbackground">
+    <h1 style="margin-left: 200px; color: white;">"Hello, Newbie!"</h1>
+    <p style="margin-left: 200px;">
+      
+  <% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+    <%= form_for(:user, :url => '/users/sign_in', html: { class: "navbar-form pull-right form-inline" }) do |f| %>   
+        <%= f.text_field :email, :placeholder => "Email", class: "input-small" %> 
+        <%= f.password_field :password, :placeholder => "Password", class: "input-small"  %>
+        <%= ' // '%>
+        <label class="checkbox">
+          <%= f.check_box :remember_me %><%= f.label :remember_me %>
+        </label>
+        <%= ' // '%>
+        <%= f.submit 'Login', class: "btn" %>
+        <%= ' // '%>
+        <%= link_to('Sign up', new_user_registration_path)  %>
+ <% end %>
+  
+  
+  </li>
+<% end %>
+      
+        <!--<a href="/" style="color: white;">메인화면</a><br>-->
+        <!--<a href="/home/method.html" style="color: white;">진행방법</a><br>-->
+        <!--<a href="/home/function.html" style="color: white;">추가기능</a><br>-->
+        <!--<a href="/home/board.html" style="color: white;">방명록</a><br>-->
+    </p>
+    
+<!-- 하단 화면-->
+
+
+<div style="text-align: center">
+<p style="margin-bottom: 30px; color: white;">　</p>
+<p style="margin-bottom: 30px; color: white;">　</p>
+<p style="margin-bottom: 30px; color: white;">　</p>
+</div>
+			
+<div style="float: left">
+<a onclick="window.open('http://www.thelabyrinth.co.kr/labyrinth/html/tool_memo.jsp', '메모장','width=750, height=400'); return false"><input class="black" type="button" value="메모장" style="margin-left:25px"></a>
+<a onclick="window.open('http://go.gagalive.kr/d/~~~new_likelion', '채팅방','width=500, height=400'); return false"><input class="black" type="button" value="채팅방" style="margin-left:5px"></a>
+<a onclick="window.open('http://wantknow.tistory.com/'); return false"><input class="black" type="button" value="WantKnow" style="margin-left:5px"></a>
+</div>
+
+<div style="float: right";>
+<form action="/home/quiz1" method="get">
+  <input type="text" name="answer">
+  <input type="submit" value="정답">
+</form>
+
+</div>
+
+</body>
